@@ -1,10 +1,10 @@
 import { Button } from '@/Components/ui/button';
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import AppLayout from '@/Layouts/AppLayout';
 import { Head } from '@inertiajs/react';
 
 export default function Dashboard() {
     return (
-        <AuthenticatedLayout header={<h2 className="text-xl font-semibold leading-tight text-gray-800">Dashboard</h2>}>
+        <div>
             <Head title="Dashboard" />
 
             <div className="py-12">
@@ -15,6 +15,8 @@ export default function Dashboard() {
                     <Button>dfghdfgdfgf</Button>
                 </div>
             </div>
-        </AuthenticatedLayout>
+        </div>
     );
 }
+
+Dashboard.layout = (page) => <AppLayout children={page} title="Dashboard" />;
